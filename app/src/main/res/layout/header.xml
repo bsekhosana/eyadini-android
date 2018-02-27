@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="160sp"
+    android:background="@color/colorPrimaryLight">
+
+    <ImageView
+        android:src="@drawable/eyadini_logo_large"
+        android:layout_centerInParent="true"
+        android:layout_width="75sp"
+        android:layout_height="75sp" />
+
+
+</RelativeLayout>
