@@ -8,14 +8,10 @@
     tools:context="com.ops.dev.blaque.placid.MainActivity">
 
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Bruno Mageja"
-            android:textSize="40sp"/>
+        android:layout_height="match_parent"
+        android:id="@+id/content">
 
     </LinearLayout>
 
