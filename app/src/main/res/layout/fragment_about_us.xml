@@ -1,15 +1,38 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.ops.dev.blaque.placid.AboutUs">
 
 
-    <!--<ImageView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="160sp"-->
-        <!--android:background="@drawable/about_us_header"-->
-        <!--android:adjustViewBounds="true"/>-->
+    <ImageView
+        android:id="@+id/headerImage"
+        android:layout_width="match_parent"
+        android:layout_height="160sp"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"/>
+
+    <TextView
+        android:id="@+id/aboutUsText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/headerImage"
+        android:scrollbars="vertical"
+        android:layout_margin="16dp"
+        android:layout_alignBottom="@id/aboutUsFooter"
+        android:textColor="@color/colorPrimary"
+        android:text="Eyadini Lounge is your no1 Ekasi Shisanyama Experience located in the heart of Umlazi Township. A dream that came to life in 2008, Eyadini is a highly sought out shisanyama restaurant and premium event venue popularly known for its “Eyadini walk”, where patrons are photographed midwalk as they enter Eyadini Lounge. Specialising in a unique Shisanyama township experience, the award winning Eyadini lounge is one of the fastest growing businesses in KZN, catering to the young and trendy, meat and music lover alike. Not only do we have the best meat in town but we also host the craziest out of this world events, private functions, birthdays, baby showers, product launches, brand activations…the works…basically Eyadini is here for your pleasure and specific needs, catering to your exclusive demands. From catering services to the biggest stage performances it is true when they say “Eyadi Lizokmangaza."/>
+
+    <TextView
+        android:id="@+id/aboutUsFooter"
+        android:layout_width="match_parent"
+        android:textAlignment="center"
+        android:background="@color/colorPrimary"
+        android:scrollbars="vertical"
+        android:layout_height="24sp"
+        android:layout_alignParentBottom="true"
+        android:text="@string/powered_by_blaque_dev_ops"
+        android:textColor="@color/colorPrimaryLight"/>
 
 
-</LinearLayout>
+</RelativeLayout>

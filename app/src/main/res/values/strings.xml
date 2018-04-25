@@ -9,4 +9,5 @@
     // Facebook
     <string name="facebook_app_id">564202827266707</string>
     <string name="fb_login_protocol_scheme">fb564202827266707</string>
+    <string name="powered_by_blaque_dev_ops">Powered By Blaque Dev Ops</string>
 </resources>
