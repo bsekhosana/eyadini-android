@@ -9,8 +9,12 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import com.facebook.AccessToken;
+import com.facebook.login.LoginManager;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -31,22 +35,39 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
 
 
-        if (savedInstanceState == null) {
+        boolean loggedIn = AccessToken.getCurrentAccessToken() == null;
+        Log.d(null, "Access Token : "+AccessToken.getCurrentAccessToken());
+        if (loggedIn){
             // on first time to display view for first navigation item based on the number
-            MenuItem homeItem = (MenuItem) findViewById(R.id.home);
             Fragment myFragment = null;
-            Class fragmentClass = null;
-            fragmentClass = Home.class;
-
+            Class fragmentClass = Login.class;
             try{
                 myFragment = (Fragment)fragmentClass.newInstance();
             }
             catch (Exception e){
                 e.printStackTrace();
             }
-
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction().replace(R.id.content,myFragment).commit();
+
+        }else{
+            if (savedInstanceState == null) {
+                // on first time to display view for first navigation item based on the number
+                MenuItem homeItem = (MenuItem) findViewById(R.id.home);
+                Fragment myFragment = null;
+                Class fragmentClass = null;
+                fragmentClass = Home.class;
+
+                try{
+                    myFragment = (Fragment)fragmentClass.newInstance();
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                }
+
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.content,myFragment).commit();
+            }
         }
     }
 
@@ -86,7 +107,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fragmentClass = ContactUs.class;
             Toast.makeText(this, "This is contact us", Toast.LENGTH_SHORT).show();
         }else if (id == R.id.logout){
-            fragmentClass = Home.class;
+            fragmentClass = Login.class;
+            LoginManager.getInstance().logOut();
             Toast.makeText(this, "This is logout", Toast.LENGTH_SHORT).show();
         }
 

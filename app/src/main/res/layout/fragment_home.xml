@@ -2,13 +2,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.ops.dev.blaque.placid.Home">
+    tools:context="com.ops.dev.blaque.placid.Home"
+    >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:textSize="40sp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Home Fragment"/>
+    <!--<ImageView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:src="@drawable/home_background"-->
+        <!--android:adjustViewBounds="false"/>-->
+
 
 </FrameLayout>
